@@ -1,0 +1,23 @@
+{
+  "template": "git@github.com:openxerpa/mini-paas-starter.git",
+  "commit": "77d446d19c977c3a3e6d4083a46fdb6f03a329ee",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "Py API",
+      "project_slug": "python-api",
+      "description": "python API",
+      "github_org": "openxerpa",
+      "service_type": "external",
+      "service_port": "8000",
+      "docker_registry": "ghcr.io",
+      "base_domain_dev": "opendays.cc",
+      "base_domain_test": "opendays.cc",
+      "base_domain_prod": "opendays.cc",
+      "memory_limit": "512M",
+      "_template": "git@github.com:openxerpa/mini-paas-starter.git",
+      "_commit": "77d446d19c977c3a3e6d4083a46fdb6f03a329ee"
+    }
+  },
+  "directory": "templates/python-service"
+}

@@ -1,0 +1,14 @@
+# Build stage
+FROM ghcr.io/astral-sh/uv:python3.14-dhi AS builder
+WORKDIR /app
+COPY requirements.txt ./
+RUN uv pip install --no-cache -r requirements.txt --target /app/packages 2>/dev/null || true
+
+# Runtime stage
+FROM gcr.io/distroless/python3-debian13:nonroot
+WORKDIR /app
+ENV PYTHONPATH=/app/packages
+COPY --from=builder /app/packages /app/packages
+COPY src/ ./src/
+EXPOSE 8000
+CMD ["-m", "src.main"]
